@@ -1,9 +1,9 @@
-import Layout from "@/components/layouts/HomePageLayout";
+import HomePageLayout from "@/components/layouts/HomePageLayout";
 
 export default function Home() {
   return <div>Hello</div>;
 }
 
 Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <HomePageLayout>{page}</HomePageLayout>;
 };

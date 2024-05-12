@@ -48,7 +48,7 @@ const Navbar = () => {
         <Image src={logo} alt="Logo" />
       </div>
       <div>
-        <ul className="flex items-center gap-5">
+        <ul className="flex items-center gap-5 font-normal text-[18px]">
           <li>
             <Link href={"/"}>Home</Link>
           </li>
@@ -85,6 +85,7 @@ const Navbar = () => {
             <div className="absolute top-8 bg-white text-black  rounded-md">
               {items.map((item) => (
                 <button
+                  key={Math.random()}
                   onClick={() => handleSelectCountry(item)}
                   className="flex items-center py-2 px-5 gap-2 hover:bg-gray-100 hover:rounded-md"
                   type="button"
@@ -98,7 +99,7 @@ const Navbar = () => {
         </div>
 
         <div>
-          <button className="bg-[#C09D5E] rounded-full px-6 py-3 flex gap-2 items-center">
+          <button className="bg-[#C09D5E] rounded-full font-medium px-6 py-3 flex gap-2 items-center">
             <FaUser />
             <span>login/Register</span>
           </button>
