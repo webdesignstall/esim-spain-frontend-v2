@@ -1,6 +1,7 @@
 import ChoosePirateSim from "@/components/home/ChoosePirateSim";
 import CountrySection from "@/components/home/CountrySection";
 import SimpleSteps from "@/components/home/SimpleSteps";
+import Testimonials from "@/components/home/Testimonials";
 import HomePageLayout from "@/components/layouts/HomePageLayout";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <CountrySection />
       <ChoosePirateSim />
       <SimpleSteps />
+      <Testimonials />
     </div>
   );
 }
