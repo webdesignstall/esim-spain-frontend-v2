@@ -8,7 +8,7 @@ const CountrySection = () => {
         zIndex: 1,
         boxShadow: "0px -20px 20px rgba(0, 0, 10, 0.2)",
       }}
-      className="max-w-[1920px] w-full mx-auto p-10 bg-[#1F1B17] -mt-28 rounded-3xl relative"
+      className="max-w-[1320px] w-full mx-auto p-10 bg-[#1F1B17] -mt-28 rounded-3xl relative"
     >
       <h2 className="text-5xl font-medium text-white text-center py-10 mb-20">
         Explore Our Range of <br /> Data eSIMs for 190+ Destinations
@@ -16,7 +16,7 @@ const CountrySection = () => {
       <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-6">
         {Array.from({ length: 15 }).map((item) => (
           <div
-            className="bg-[#343230] rounded-xl flex flex-col gap-2 items-center px-2 py-7 text-center mb-16"
+            className="bg-[#343230] rounded-xl group hover:border-[1px] hover:border-[#8E8E8E] border-[1px] border-[#343230]  flex flex-col gap-2 items-center px-2 py-7 text-center mb-16"
             key={Math.random()}
           >
             <div className="flex justify-center items-center -mt-24 border-[8px] rounded-full border-[#1F1B17]">
@@ -26,9 +26,11 @@ const CountrySection = () => {
                 alt="country flag"
               />
             </div>
-            <h4 className="text-2xl text-white">Bangladesh</h4>
-            <h6 className="text-xl text-[#FFFFFF]">Starts at $3.5</h6>
-            <button className="bg-white p-2 rounded-full">
+            <div className="mb-5">
+              <h4 className="text-2xl text-white mb-2">Bangladesh</h4>
+              <h6 className="text-xl text-[#FFFFFF]">Starts at $3.5</h6>
+            </div>
+            <button className="bg-[#FFFFFF69] group-hover:bg-white p-2 rounded-full">
               <FaChevronRight className="" />
             </button>
           </div>
