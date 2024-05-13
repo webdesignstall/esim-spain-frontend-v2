@@ -3,7 +3,7 @@ import { FaUser } from "react-icons/fa";
 
 const Testimonials = () => {
   return (
-    <div className="max-w-[1320px] w-full mx-auto p-10 flex flex-col gap-10">
+    <div className="max-w-[1320px] w-full mx-auto px-10 pt-20 pb-60 flex flex-col gap-10">
       <div className="flex justify-between items-center">
         <h2 className="text-[45px] lg:w-1/2 text-[#FFFFFF] font-medium  leading-[50px]">
           What Our Customers Have to Say About Piratemobile
