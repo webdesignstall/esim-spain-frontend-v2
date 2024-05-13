@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "../../assets/pirateLogo.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { FaUser, FaAngleDown } from "react-icons/fa";
 import { LiaFlagUsaSolid } from "react-icons/lia";
+import useHandlePropagation from "@/hooks/useHandlePropagation";
 
 const items = [
   {
@@ -36,11 +37,17 @@ const items = [
 const Navbar = () => {
   const [selectedCountry, setSelectedCountry] = useState(items[0]);
   const [dropdown, setDropdown] = useState(false);
+  const closeDropDownModal = useHandlePropagation();
+  const dropDownRef = useRef(null);
 
   const handleSelectCountry = (country) => {
     setSelectedCountry(country);
     setDropdown(false);
   };
+
+  useEffect(() => {
+    closeDropDownModal(dropDownRef, setDropdown);
+  }, []);
 
   return (
     <nav className="flex justify-between items-center text-white px-10 py-4">
@@ -82,7 +89,10 @@ const Navbar = () => {
             </span>
           </button>
           {dropdown && (
-            <div className="absolute top-8 bg-white text-black  rounded-md">
+            <div
+              ref={dropDownRef}
+              className="absolute top-8 bg-white text-black  rounded-md"
+            >
               {items.map((item) => (
                 <button
                   key={Math.random()}
