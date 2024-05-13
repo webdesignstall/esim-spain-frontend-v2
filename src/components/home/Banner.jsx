@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import useHandlePropagation from "@/hooks/useHandlePropagation";
+import React, { useEffect, useRef, useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import { LiaFlagUsaSolid } from "react-icons/lia";
 
@@ -34,6 +35,8 @@ const Banner = () => {
   const [selectedCountry, setSelectedCountry] = useState();
   const [dropdown, setDropdown] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const closeDropDownModal = useHandlePropagation();
+  const dropDownRef = useRef(null);
 
   const handleSelectCountry = (country) => {
     setSelectedCountry(country);
@@ -43,6 +46,10 @@ const Banner = () => {
   const handleSearchCountry = () => {
     console.log("Search for", searchValue);
   };
+
+  useEffect(() => {
+    closeDropDownModal(dropDownRef, setDropdown);
+  }, []);
 
   return (
     <div className="max-w-[1920px] w-full mx-auto flex flex-col gap-3 p-10">
@@ -67,6 +74,7 @@ const Banner = () => {
           </button>
           {dropdown && (
             <div
+              ref={dropDownRef}
               style={{ zIndex: 1 }}
               className="absolute top-10 bg-white w-36  shadow-lg text-black  rounded-md"
             >
