@@ -15,7 +15,7 @@ const HomePageLayout = ({ children }) => {
         <img
           src={"https://i.ibb.co/pzrKSpJ/banner-Image4.jpg"}
           alt="background image"
-          style={{ width: "100%", height: "600px" }}
+          style={{ width: "100%", height: "800px" }}
         />
       </div>
 

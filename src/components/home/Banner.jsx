@@ -51,7 +51,7 @@ const Banner = () => {
           For One eSim
         </button>
       </p>
-      <h1 className="text-white text-7xl font-bold">
+      <h1 className="text-white text-7xl font-bold my-5">
         Working Seamlessly <br /> Across Many Type <br /> of Devices
       </h1>
       <div className="flex items-center gap-3  border lg:w-1/2 p-2 rounded-full text-white">
@@ -66,7 +66,10 @@ const Banner = () => {
             </span>
           </button>
           {dropdown && (
-            <div className="absolute top-10 bg-white w-36 shadow-lg text-black  rounded-md">
+            <div
+              style={{ zIndex: 1 }}
+              className="absolute top-10 bg-white w-36  shadow-lg text-black  rounded-md"
+            >
               {items.map((item) => (
                 <button
                   key={Math.random()}
