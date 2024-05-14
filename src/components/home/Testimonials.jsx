@@ -22,7 +22,7 @@ const Testimonials = () => {
 
   return (
     <div className="lg:block hidden">
-      <div className="max-w-[1320px] w-full mx-auto px-10 pt-20 pb-60 flex flex-col gap-10">
+      <div className="2xl:max-w-[70%] lg:max-w-[90%] mx-auto px-5 pt-20 pb-60 flex flex-col gap-10">
         <div className="flex justify-between items-center">
           <h2 className="text-[45px] lg:w-1/2 text-[#FFFFFF] font-medium  leading-[50px]">
             What Our Customers Have to Say About Piratemobile
@@ -54,9 +54,7 @@ const Testimonials = () => {
                 <div>
                   <div className="mb-2 flex justify-between items-center">
                     <div>
-                      <h4 className="text-white text-xs">
-                        {item.user.name} {item.review.length}
-                      </h4>
+                      <h4 className="text-white text-xs">{item.user.name}</h4>
                       <span className="text-gray-400 text-[14px]">
                         {item.user.designation}
                       </span>
@@ -65,12 +63,10 @@ const Testimonials = () => {
                       {item.user.platform}
                     </div>
                   </div>
-                  <blockquote>
-                    <div
-                      className="text-white text-xs flex flex-col gap-2"
-                      dangerouslySetInnerHTML={{ __html: `“${item.review}”` }}
-                    ></div>
-                  </blockquote>
+                  <div
+                    className="text-white text-xs leading-6 flex flex-col gap-2"
+                    dangerouslySetInnerHTML={{ __html: `“${item.review}”` }}
+                  ></div>
                 </div>
               </div>
             ))}

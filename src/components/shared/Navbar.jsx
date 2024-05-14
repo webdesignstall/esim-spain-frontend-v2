@@ -45,7 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="lg:flex justify-between items-center text-white lg:px-10 px-3 py-4">
+    <nav className="lg:flex justify-between items-center text-white 2xl:px-20 px-3 py-4">
       {/* Desktop design  */}
       <div className="lg:block hidden">
         <Image src={logo} alt="Logo" />
