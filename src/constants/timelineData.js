@@ -8,9 +8,7 @@ const timelineData = [
     description:
       "Choose the package based on your data needs for a perfect match of data usage and cost-effectiveness",
     icon: (
-      <div className="rounded-full p-3 text-lg text-[#C09D5E] bg-[#5c5a58]">
-        <TfiWorld />
-      </div>
+      <TfiWorld className="bg-[#454545] text-5xl p-2 rounded-full text-[#C09D5E]" />
     ),
     link: "https://link.com",
   },
@@ -19,9 +17,7 @@ const timelineData = [
       "Confirm compatibility and click on check out to complete the purchase",
     description: "Not sure if your phone is eSIM compatible?",
     icon: (
-      <div className="rounded-full p-3 text-lg text-[#C09D5E] bg-[#5c5a58]">
-        <CiMobile2 />
-      </div>
+      <CiMobile2 className="bg-[#454545] text-5xl p-2 rounded-full text-[#C09D5E]" />
     ),
   },
   {
@@ -29,9 +25,7 @@ const timelineData = [
     description:
       "After successful payment, activate your eSIM by scanning the QR code or check your email for the QR code sent to you.",
     icon: (
-      <div className="rounded-full p-3 text-lg text-[#C09D5E] bg-[#5c5a58]">
-        <FaBorderAll />
-      </div>
+      <FaBorderAll className="bg-[#454545] text-5xl p-2 rounded-full text-[#C09D5E]" />
     ),
     link: "https://link.com",
   },

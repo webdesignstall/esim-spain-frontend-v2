@@ -5,6 +5,7 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import timelineData from "@/constants/timelineData";
+import { BsChevronDown } from "react-icons/bs";
 
 const VerticalUITimeline = () => {
   return (
@@ -14,7 +15,12 @@ const VerticalUITimeline = () => {
           <TimelineItem key={index} className="py-1 text-white">
             <TimelineSeparator>
               {item.icon}
-              {index !== timelineData.length - 1 && <TimelineConnector />}
+              {index !== timelineData.length - 1 && (
+                <>
+                  <TimelineConnector className="mt-2" />
+                  <BsChevronDown className="-mt-4 text-2xl" />
+                </>
+              )}
             </TimelineSeparator>
             <TimelineContent className="py-20 -mt-20">
               <h3 className="text-[28px] w-[500px] mb-3 leading-8">
