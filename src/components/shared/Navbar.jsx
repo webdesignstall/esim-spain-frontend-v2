@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../../assets/pirateLogo.svg";
+import bars from "../../assets/icons/NavBars.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { FaUser, FaAngleDown } from "react-icons/fa";
 import { LiaFlagUsaSolid } from "react-icons/lia";
-import useHandlePropagation from "@/hooks/useHandlePropagation";
 
 const items = [
   {
@@ -37,24 +37,20 @@ const items = [
 const Navbar = () => {
   const [selectedCountry, setSelectedCountry] = useState(items[0]);
   const [dropdown, setDropdown] = useState(false);
-  const closeDropDownModal = useHandlePropagation();
-  const dropDownRef = useRef(null);
+  const [showMenuItem, setShowMenuItem] = useState(false);
 
   const handleSelectCountry = (country) => {
     setSelectedCountry(country);
     setDropdown(false);
   };
 
-  useEffect(() => {
-    closeDropDownModal(dropDownRef, setDropdown);
-  }, []);
-
   return (
-    <nav className="flex justify-between items-center text-white px-10 py-4">
-      <div>
+    <nav className="lg:flex justify-between items-center text-white lg:px-10 px-3 py-4">
+      {/* Desktop design  */}
+      <div className="lg:block hidden">
         <Image src={logo} alt="Logo" />
       </div>
-      <div>
+      <div className="lg:block hidden">
         <ul className="flex items-center gap-5 font-normal text-[18px]">
           <li>
             <Link href={"/"}>Home</Link>
@@ -74,7 +70,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex items-center gap-5">
-        <div className="relative">
+        <div className="relative lg:block hidden">
           <button
             onClick={() => setDropdown((prev) => !prev)}
             className="flex items-center gap-2"
@@ -89,13 +85,10 @@ const Navbar = () => {
             </span>
           </button>
           {dropdown && (
-            <div
-              ref={dropDownRef}
-              className="absolute top-8 bg-white text-black  rounded-md"
-            >
+            <div className="absolute top-8 bg-white text-black  rounded-md">
               {items.map((item) => (
                 <button
-                  key={Math.random()}
+                  key={item.key}
                   onClick={() => handleSelectCountry(item)}
                   className="flex items-center py-2 px-5 gap-2 hover:bg-gray-100 hover:rounded-md"
                   type="button"
@@ -108,11 +101,57 @@ const Navbar = () => {
           )}
         </div>
 
-        <div>
+        <div className="lg:block hidden">
           <button className="bg-[#C09D5E] rounded-full font-medium px-6 py-3 flex gap-2 items-center">
             <FaUser />
             <span>login/Register</span>
           </button>
+        </div>
+      </div>
+
+      {/* mobile design  */}
+      <div className="lg:hidden block">
+        <div className="flex items-center justify-between">
+          <div>
+            <Image height={80} width={80} src={logo} alt="logo" />
+          </div>
+          <div className="flex gap-3 items-center">
+            <button className="bg-slate-600 py-5 px-7 rounded-[25px]">
+              <FaUser />
+            </button>
+            <div className="relative">
+              <button
+                onClick={() => setShowMenuItem((prev) => !prev)}
+                className="bg-[#C09D5E] py-4 px-6 rounded-[25px]"
+              >
+                <Image height={28} width={28} src={bars} alt="drop-down bar" />
+              </button>
+              {showMenuItem && (
+                <div className="absolute top-16 right-0 bg-white text-black p-3 w-[160px] rounded-md">
+                  <ul className="flex flex-col gap-1  text-[18px] font-medium">
+                    <li>
+                      <Link href={"/"}>Home</Link>
+                    </li>
+                    <li>
+                      <Link href={"/about"}>About us</Link>
+                    </li>
+                    <li>
+                      <Link href={"/packages"}>Packages</Link>
+                    </li>
+                    <li>
+                      <Link href={"/logs"}>Blog</Link>
+                    </li>
+                    <li>
+                      <Link href={"/contact"}>Contact us</Link>
+                    </li>
+                    <li>
+                      <Link href={"/auth"}>Login/Register</Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </nav>
