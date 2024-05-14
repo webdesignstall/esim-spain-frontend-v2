@@ -7,8 +7,14 @@ import bgImage from "../../assets/bannerImage1.jpg";
 const HomePageLayout = ({ children }) => {
   return (
     <div>
-      <div style={{ position: "relative", height: "800px" }}>
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0 }}>
+      <div
+        className="relative lg:h-[800px]"
+        // style={{ position: "relative", height: "800px" }}
+      >
+        <div
+          className="absolute top-0 left-0 right-0"
+          // style={{ position: "absolute", top: 0, left: 0, right: 0 }}
+        >
           <Navbar />
           <Banner />
         </div>
