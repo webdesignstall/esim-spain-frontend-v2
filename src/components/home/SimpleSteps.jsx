@@ -2,23 +2,30 @@ import React from "react";
 import Image from "next/image";
 import Image5G from "../../assets/5G_Internet.png";
 import VerticalUITimeline from "./VerticalUITimeline";
+import VerticalTimelineMobile from "./VerticalTimelineMobile";
 
 const SimpleSteps = () => {
   return (
-    <div className="lg:block hidden">
-      <div className=" bg-[#1F1B17] py-20">
-        <div className="max-w-[1920px] w-full mx-auto p-10 flex flex-col">
-          <div className="text-center">
-            <h2 className="text-[45px] text-[#FFFFFF] mb-2">3 Simple Steps</h2>
-            <p className="text-lg text-[#D2D2D2]">To Active Your eSims</p>
+    <div className="bg-[#1F1B17] py-20 lg:px-0 px-5">
+      <div className="flex flex-col">
+        <div className="text-center">
+          <h2 className="text-[45px] text-[#FFFFFF] mb-2">3 Simple Steps</h2>
+          <p className="text-lg text-[#D2D2D2]">To Active Your eSims</p>
+        </div>
+        <div className="flex lg:flex-row flex-col-reverse justify-between mt-10 gap-10">
+          <div className="lg:block hidden w-1/2">
+            <VerticalUITimeline />
           </div>
-          <div className="flex lg:flex-row flex-col-reverse max-w-[1920px] w-full mx-auto justify-center mt-10 gap-10">
-            <div className="w-[633.83px]">
-              <VerticalUITimeline />
-            </div>
-            <div className="w-[589.02px]">
-              <Image src={Image5G} />
-            </div>
+          <div className="lg:hidden block">
+            <VerticalTimelineMobile />
+          </div>
+          <div className="lg:w-1/2 w-full">
+            <Image className="lg:block hidden" src={Image5G} alt="hero image" />
+            <Image
+              className="lg:hidden block w-full"
+              src={Image5G}
+              alt="hero image"
+            />
           </div>
         </div>
       </div>
