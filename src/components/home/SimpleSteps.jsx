@@ -9,7 +9,9 @@ const SimpleSteps = () => {
     <div className="bg-[#1F1B17] py-20 lg:px-0 px-5">
       <div className="flex flex-col">
         <div className="text-center">
-          <h2 className="text-[45px] text-[#FFFFFF] mb-2">3 Simple Steps</h2>
+          <h2 className="lg:text-[45px] text-3xl text-[#FFFFFF] mb-2">
+            3 Simple Steps
+          </h2>
           <p className="text-lg text-[#D2D2D2]">To Active Your eSims</p>
         </div>
         <div className="flex lg:flex-row flex-col-reverse justify-between mt-10 gap-10">
