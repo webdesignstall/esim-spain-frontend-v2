@@ -102,10 +102,12 @@ const Navbar = () => {
         </div>
 
         <div className="lg:block hidden">
-          <button className="bg-[#C09D5E] rounded-full font-medium px-6 py-3 flex gap-2 items-center">
-            <FaUser />
-            <span>login/Register</span>
-          </button>
+          <Link href={"/signin"}>
+            <button className="bg-[#C09D5E] rounded-full font-medium px-6 py-3 flex gap-2 items-center">
+              <FaUser />
+              <span>login/Register</span>
+            </button>
+          </Link>
         </div>
       </div>
 
