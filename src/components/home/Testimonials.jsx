@@ -1,5 +1,6 @@
 import testimonialData from "@/constants/testimonialData";
 import { FaUser } from "react-icons/fa";
+import TestimonialSliderCard from "../cards/TestimonialSliderCard";
 
 const Testimonials = () => {
   // Sort testimonialData to find the largest review
@@ -21,18 +22,20 @@ const Testimonials = () => {
     .slice(-2);
 
   return (
-    <div className="lg:block hidden">
-      <div className="2xl:max-w-[70%] lg:max-w-[90%] mx-auto px-5 pt-20 pb-60 flex flex-col gap-10">
-        <div className="flex justify-between items-center">
-          <h2 className="text-[45px] lg:w-1/2 text-[#FFFFFF] font-medium  leading-[50px]">
-            What Our Customers Have to Say About Piratemobile
-          </h2>
-          <div className="flex lg:w-1/2 justify-end items-center">
+    <div className="2xl:max-w-[70%] lg:max-w-[90%] mx-auto px-5 pt-20 pb-60 flex flex-col gap-10">
+      <div className="flex justify-between items-center">
+        <h2 className="lg:text-[45px] text-2xl text-center lg:w-1/2 text-[#FFFFFF] font-medium  lg:leading-[50px]">
+          What Our Customers Have to Say About Piratemobile
+        </h2>
+        <div className="lg:flex lg:w-1/2 justify-end items-center">
+          <div className="lg:block hidden">
             <button className="bg-[#C09D5E] rounded-full font-medium px-6 py-3 flex gap-2 items-center text-white">
               Read More Reviews
             </button>
           </div>
         </div>
+      </div>
+      <div className="lg:block hidden">
         <div className="flex justify-between gap-5 h-full">
           <div className="w-1/3 flex flex-col justify-between gap-5">
             {firstTwo.map((item, index) => (
@@ -146,6 +149,16 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="lg:hidden block">
+        <TestimonialSliderCard />
+      </div>
+      <div className="flex lg:w-1/2 mt-3 justify-center items-center">
+        <div className="lg:hidden block">
+          <button className="bg-[#C09D5E] rounded-full font-medium px-6 py-3 flex gap-2 items-center text-white">
+            Read More Reviews
+          </button>
         </div>
       </div>
     </div>
