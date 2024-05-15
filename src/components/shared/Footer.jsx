@@ -31,18 +31,18 @@ const Footer = () => {
               Guernsey, GY11WA
             </p>
           </div>
-          <div className="lg:w-3/5 flex justify-between items-center gap-20 lg:mt-0 mt-10">
-            <div>
-              <h3 className="text-sm font-medium text-white  mb-4">
+          <div className="lg:w-3/5 flex justify-between items-center lg:gap-20 gap-5 lg:mt-0 mt-10">
+            <div className="mb-2">
+              <h3 className="text-sm font-medium text-white  lg:mb-4 mb-6">
                 Contact us
               </h3>
               <ul className="text-xs text-[#C09D5E]">
-                <li>info@piratemobile.gg</li>
+                <li className="">info@piratemobile.gg</li>
               </ul>
             </div>
             <div>
               <h3 className="text-sm text-white  mb-4">Social Media</h3>
-              <ul className="flex gap-3">
+              <ul className="flex lg:gap-3 gap-2">
                 <li className="p-2 bg-gray-600 text-white rounded-full">
                   <AiFillInstagram className="lg:h-[48px] lg:w-[48px] " />
                 </li>

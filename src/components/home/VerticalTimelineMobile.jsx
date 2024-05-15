@@ -27,7 +27,7 @@ const VerticalTimelineMobile = () => {
           <BsChevronDown className="text-white -mt-[10px]" />
         </TimelineSeparator>
         <TimelineContent className="py-10 -mt-10">
-          <h4 className="text-white text-2xl mb-4">
+          <h4 className="text-white lg:text-2xl mb-4">
             Choose your destination and package that suits your needs
           </h4>
           <p className="text-[#D2D2D2]">
@@ -43,7 +43,7 @@ const VerticalTimelineMobile = () => {
           <BsChevronDown className="text-white -mt-[10px]" />
         </TimelineSeparator>
         <TimelineContent className="py-10 -mt-10">
-          <h4 className="text-white text-2xl mb-4">
+          <h4 className="text-white lg:text-2xl mb-4">
             Confirm compatibility and click on check out to complete the
             purchase
           </h4>
@@ -57,7 +57,7 @@ const VerticalTimelineMobile = () => {
           <FaBorderAll className="bg-[#454545] text-5xl p-3 rounded-full text-[#C09D5E]" />
         </TimelineSeparator>
         <TimelineContent>
-          <h4 className="text-white text-2xl mb-4">
+          <h4 className="text-white lg:text-2xl mb-4">
             Use the QR code provided to install and activate your eSIM
           </h4>
           <p className="text-[#D2D2D2]">
