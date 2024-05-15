@@ -27,8 +27,8 @@ const Testimonials = () => {
         <h2 className="lg:text-[45px] text-2xl text-center lg:w-1/2 text-[#FFFFFF] font-medium  lg:leading-[50px]">
           What Our Customers Have to Say About Piratemobile
         </h2>
-        <div className="lg:block hidden">
-          <div className="flex lg:w-1/2 justify-end items-center">
+        <div className="lg:flex lg:w-1/2 justify-end items-center">
+          <div className="lg:block hidden">
             <button className="bg-[#C09D5E] rounded-full font-medium px-6 py-3 flex gap-2 items-center text-white">
               Read More Reviews
             </button>
@@ -153,6 +153,13 @@ const Testimonials = () => {
       </div>
       <div className="lg:hidden block">
         <TestimonialSliderCard />
+      </div>
+      <div className="flex lg:w-1/2 mt-3 justify-center items-center">
+        <div className="lg:hidden block">
+          <button className="bg-[#C09D5E] rounded-full font-medium px-6 py-3 flex gap-2 items-center text-white">
+            Read More Reviews
+          </button>
+        </div>
       </div>
     </div>
   );
