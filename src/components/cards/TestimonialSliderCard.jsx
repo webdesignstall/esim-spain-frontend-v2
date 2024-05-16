@@ -7,7 +7,7 @@ import testimonialData from "@/constants/testimonialData";
 const TestimonialSliderCard = () => {
   const settings = {
     dots: true,
-    arrows: false, // Remove arrow navigation
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
