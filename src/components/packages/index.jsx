@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import PackageFilterable from "./PackageFilterable";
 import PackageCard from "../cards/PackageCard";
 import Link from "next/link";
+import packageData from "@/constants/packageData";
+import PackageCardSlider from "../cards/PackageCardSlider";
 
 const PackageList = ({ country }) => {
   const [packageType, setPackageType] = useState("Daily");
+
   return (
     <div
       style={{
@@ -26,22 +29,13 @@ const PackageList = ({ country }) => {
       </div>
       <div className="md:block hidden">
         <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 my-10 pb-10">
-          {Array.from({ length: 6 }).map((pkg) => (
-            <PackageCard packageType={packageType} />
+          {packageData.map((pkg) => (
+            <PackageCard pack={pkg} packageType={packageType} />
           ))}
         </div>
       </div>
-      <div className="md:hidden block overflow-hidden pb-10">
-        <div className="flex gap-5">
-          {Array.from({ length: 6 }).map((pkg) => (
-            <PackageCard packageType={packageType} fixedWidth="250px" />
-          ))}
-        </div>
-        <div>
-          <h3 className="text-white my-5 text-center">
-            Slider navigator will be added
-          </h3>
-        </div>
+      <div className="md:hidden block">
+        <PackageCardSlider packageType={packageType} />
       </div>
       <div className="flex justify-center items-center">
         <Link href={"/countries"}>
