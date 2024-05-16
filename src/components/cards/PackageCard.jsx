@@ -6,10 +6,10 @@ import { IoIosPricetag } from "react-icons/io";
 import { IoMdCheckmark } from "react-icons/io";
 import Image from "next/image";
 
-const PackageCard = ({ packageType, fixedWidth }) => {
+const PackageCard = ({ packageType, pack }) => {
   return (
     <div
-      className={`text-white w-[350px]
+      className={`text-white
       } border-slate-500 rounded-lg bg-[#454545]`}
     >
       <div className="overflow-hidden h-[80px] relative">
@@ -24,11 +24,7 @@ const PackageCard = ({ packageType, fixedWidth }) => {
           objectFit="cover"
         />
       </div>
-      <div
-        className={`p-4 ${
-          fixedWidth ? `w-[${fixedWidth}]` : "w-full"
-        }  flex flex-col gap-4`}
-      >
+      <div className="p-4 flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <TfiWorld className="text-xl" />
@@ -37,10 +33,10 @@ const PackageCard = ({ packageType, fixedWidth }) => {
           <div className="flex items-center gap-2 font-medium">
             <img
               className="w-6 h-6 rounded-full"
-              src="https://i.ibb.co/5WNh9wm/bd-Country-Flag.png"
+              src={pack?.flag}
               alt="country flag"
             />
-            <span>Canada</span>
+            <span>{pack?.country}</span>
           </div>
         </div>
 
@@ -50,7 +46,7 @@ const PackageCard = ({ packageType, fixedWidth }) => {
             <span>Data</span>
           </div>
           <div className="flex items-center gap-2 font-medium">
-            <span>1GB</span>
+            <span>{pack?.data}</span>
           </div>
         </div>
 
@@ -60,7 +56,7 @@ const PackageCard = ({ packageType, fixedWidth }) => {
             <span>Validity</span>
           </div>
           <div className="font-medium">
-            <span>7 Days</span>
+            <span>{pack?.validity}</span>
           </div>
         </div>
 
@@ -70,12 +66,12 @@ const PackageCard = ({ packageType, fixedWidth }) => {
             <span>Price</span>
           </div>
           <div className="font-medium">
-            <span>US $4.50</span>
+            <span>US ${pack?.price}</span>
           </div>
         </div>
 
         <div className="flex items-center flex-wrap justify-between">
-          {["Data Only", "No Contracts", "No SIM Cards"].map((item) => (
+          {pack?.facilities?.map((item) => (
             <div className="flex items-center gap-1">
               <IoMdCheckmark className="text-[#C09D5E] font-bold" />
               <span className="text-[#DFDFDF]">{item}</span>
@@ -91,3 +87,80 @@ const PackageCard = ({ packageType, fixedWidth }) => {
 };
 
 export default PackageCard;
+
+export const PackageCardMobile = ({ packageType, pack }) => {
+  return (
+    <div className="text-white mb-10 mr-3 w-[250px]  border-slate-500 rounded-lg bg-[#454545]">
+      <div className="overflow-hidden h-[80px] relative">
+        <h4 className="absolute z-50 p-4 text-2xl font-medium">
+          {packageType} Pack
+        </h4>
+        <Image
+          src={bannerBgImage}
+          alt="package card banner image"
+          layout="fill"
+          className="rounded-t-lg"
+          objectFit="cover"
+        />
+      </div>
+      <div className="p-4 flex flex-col gap-4 w-[250px]">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <TfiWorld className="text-xl" />
+            <span>Coverage</span>
+          </div>
+          <div className="flex items-center gap-2 font-medium">
+            <img
+              className="w-6 h-6 rounded-full"
+              src={pack?.flag}
+              alt="country flag"
+            />
+            <span>{pack?.country}</span>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <BiTransfer className="rotate-90 text-xl" />
+            <span>Data</span>
+          </div>
+          <div className="flex items-center gap-2 font-medium">
+            <span>{pack?.data}</span>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <BiSolidCalendar className="text-xl" />
+            <span>Validity</span>
+          </div>
+          <div className="font-medium">
+            <span>{pack?.validity}</span>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <IoIosPricetag className="text-xl" />
+            <span>Price</span>
+          </div>
+          <div className="font-medium">
+            <span>US ${pack?.price}</span>
+          </div>
+        </div>
+
+        <div className="flex items-center flex-wrap justify-between">
+          {pack?.facilities?.map((item) => (
+            <div className="flex items-center gap-1">
+              <IoMdCheckmark className="text-[#C09D5E] font-bold" />
+              <span className="text-[#DFDFDF]">{item}</span>
+            </div>
+          ))}
+        </div>
+        <div>
+          <button className="border-2 w-full rounded-full py-2">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  );
+};

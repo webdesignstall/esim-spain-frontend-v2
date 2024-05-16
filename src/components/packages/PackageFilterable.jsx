@@ -51,7 +51,7 @@ const PackageFilterable = ({ setPackageType }) => {
             {packages.map((pkg) => (
               <button
                 onClick={() => handleDropDownPackage(pkg)}
-                className="bg-[#C09D5E] p-2 w-full text-start rounded-md text-white"
+                className="bg-[#776f60] p-2 w-full text-start rounded-md text-white"
               >
                 {pkg} Packages
               </button>
